@@ -69,6 +69,7 @@ public class App {
         }
     }
     
+    
     public static void boka_plats(bokning_nr, bokning_namn, priser, visa_platser, PRIS_VUXEN, PRIS_BARN){
         System.out.println("Ange ditt födelsedatum ÅÅÅÅMMDD:");
         int person_nr = tb.nextInt();
