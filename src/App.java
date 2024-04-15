@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class App {
     static Scanner tb = new Scanner(System.in);
+    final double PRIS_VUXEN = 299.90;
+    final double PRIS_BARN = 149.90;
     public static void main(String[] args) throws Exception {
-        final double PRIS_VUXEN = 299.90;
-        final double PRIS_BARN = 149.90;
         boolean loop = true;
         int index = 0;
         int[] bokning_nr = new int[20];
@@ -15,7 +15,7 @@ public class App {
         for (int i = 0; i < bokning_namn.length; i++) {
             bokning_namn[i] = "0";
         }
-        int[] priser = new int[20];
+        double[] priser = new int[20];
         for (int j = 0; j < priser.length; j++) {
             priser[i] = 0;
         }
