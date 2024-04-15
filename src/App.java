@@ -1,7 +1,7 @@
 import java.util.Scanner;
-static Scanner tb = new Scanner(System.in);
 
 public class App {
+    static Scanner tb = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
         final double PRIS_VUXEN = 299.90;
         final double PRIS_BARN = 149.90;
@@ -70,7 +70,7 @@ public class App {
     }
     
     
-    public static void boka_plats(bokning_nr, bokning_namn, priser, visa_platser, PRIS_VUXEN, PRIS_BARN){
+    public static void boka_plats(int[] bokning_nr, String[] bokning_namn, int[] priser, String[] visa_platser, double PRIS_VUXEN, double PRIS_BARN){
         System.out.println("Ange ditt födelsedatum ÅÅÅÅMMDD:");
         int person_nr = tb.nextInt();
         while (person_nr<10000000 || person_nr>=100000000) {
@@ -126,7 +126,7 @@ public class App {
         return false;
     }
 
-    public static int beräkna_vinst(priser, index){
+    public static int beräkna_vinst(int[] priser, int index){
         if (priser.length > index) {
             int pris = priser[index];
             index++;
@@ -137,8 +137,11 @@ public class App {
         }
     }
 
-    public static void visa_passagerare(bokning_namn, bokning_nr){
+    public static void visa_passagerare(String[] bokning_namn, int[] bokning_nr){
         for (int i = 0; i < bokning_nr.length; i++) {
+            if (bokning_nr[i] = 0) {
+                break;
+            }
             System.out.print(bokning_nr);
             System.out.print(bokning_namn);
         }
