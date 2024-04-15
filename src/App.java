@@ -6,6 +6,7 @@ public class App {
         final double PRIS_VUXEN = 299.90;
         final double PRIS_BARN = 149.90;
         boolean loop = true;
+        int index = 0;
         int[] bokning_nr = new int[20];
         for (int i = 0; i < bokning_nr.length; i++) {
             bokning_nr[i] = 0;
@@ -26,15 +27,14 @@ public class App {
                 x++;
             }
         }
+        total_vinst = beräkna_vinst();
         while (loop) {
             System.out.println("Hej! Välj en tjänst från listan nedan!");
             visa_meny();
         }
-        
     }
 
     public static void visa_meny(){
-        
         int val = tb.nextInt();
         try {
             val = tb.nextInt();
@@ -124,5 +124,23 @@ public class App {
 
     public static boolean avsluta(){
         return false;
+    }
+
+    public static int beräkna_vinst(priser, index){
+        if (priser.length > index) {
+            int pris = priser[index];
+            index++;
+            return pris+beräkna_vinst();
+        }
+        else{
+            return 0;
+        }
+    }
+
+    public static void visa_passagerare(bokning_namn, bokning_nr){
+        for (int i = 0; i < bokning_nr.length; i++) {
+            System.out.print(bokning_nr);
+            System.out.print(bokning_namn);
+        }
     }
 }
