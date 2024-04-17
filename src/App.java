@@ -138,7 +138,7 @@ public class App {
 
     public static void visa_passagerare(String[] bokning_namn, int[] bokning_nr){
         for (int i = 0; i < bokning_nr.length; i++) {
-            if (bokning_nr[i] = 0) {
+            if (bokning_nr[i] == 0) {
                 break;
             }
             System.out.print(bokning_nr);
