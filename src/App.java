@@ -125,11 +125,11 @@ public class App {
         return false;
     }
 
-    public static int beräkna_vinst(int[] priser, int index){
+    public static int beräkna_vinst(double[] priser, int index){
         if (priser.length > index) {
             int pris = priser[index];
             index++;
-            return pris+beräkna_vinst();
+            return pris+beräkna_vinst(priser, index);
         }
         else{
             return 0;
