@@ -70,7 +70,7 @@ public class App {
     }
     
     
-    public static void boka_plats(int[] bokning_nr, String[] bokning_namn, int[] priser, String[] visa_platser, double PRIS_VUXEN, double PRIS_BARN){
+    public static void boka_plats(int[] bokning_nr, String[] bokning_namn, int[] priser, String[] visa_platser){
         System.out.println("Ange ditt födelsedatum ÅÅÅÅMMDD:");
         int person_nr = tb.nextInt();
         while (person_nr<10000000 || person_nr>=100000000) {
@@ -79,7 +79,7 @@ public class App {
         }
         System.out.println("Ange ditt namn:");
         String namn = tb.nextLine();
-        Thread.sleep(2000);
+        
         System.out.println("Välj en plats att boka:");
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 4; j++) {
@@ -87,7 +87,7 @@ public class App {
             }
         }
         int val = 0;
-        while (val>20 || val=0) {
+        while (val>20 || val==0) {
             System.out.println("Skriv en siffra mellan 1-20.");
             try {
                 val = tb.nextInt();
@@ -105,13 +105,12 @@ public class App {
         }
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 4; j++) {
-                visa_platser[i][j];
-                if (val = visa_platser[i][j]) {
+                visa_platser[i][j] = "X";
+                if (String.valueOf(val) == visa_platser[i][j]) {
                     continue;
                 }
             }
         }
-        visa_platser[i][j] = "X";
         bokning_namn[val] = namn;
         bokning_nr[val] = person_nr;
         if (person_nr>20060502) {
