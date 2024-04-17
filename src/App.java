@@ -34,7 +34,7 @@ public class App {
         }
     }
 
-    public static void visa_meny(){
+    public static void visa_meny(double[] priser, int index, int[] bokning_nr, String[] bokning_namn, String[][] visa_platser){
         int val = tb.nextInt();
         try {
             val = tb.nextInt();
@@ -52,16 +52,16 @@ public class App {
         }
         switch (val) {
             case 1:
-                boka_plats();
+                boka_plats(bokning_nr, bokning_namn, priser, visa_platser);
                 break;
             case 2:
                 hitta_bokning();
                 break;
             case 3:
-                visa_passagerare();
+                visa_passagerare(bokning_namn, bokning_nr);
                 break;
             case 4:
-                beräkna_vinst();
+                beräkna_vinst(priser, index);
                 break;
             case 5:
                 avsluta();
