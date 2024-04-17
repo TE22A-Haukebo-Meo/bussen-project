@@ -20,17 +20,17 @@ public class App {
             priser[i] = 0;
         }
         String[][] visa_platser = new String[5][4];
-        String x = 1;
+        int x = 1;
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 4; j++) {
                 visa_platser[i][j] = String.valueOf(x);
                 x++;
             }
         }
-        total_vinst = beräkna_vinst();
+        double total_vinst = beräkna_vinst(priser, index);
         while (loop) {
             System.out.println("Hej! Välj en tjänst från listan nedan!");
-            visa_meny();
+            visa_meny(priser, index, bokning_nr, bokning_namn, visa_platser);
         }
     }
 
